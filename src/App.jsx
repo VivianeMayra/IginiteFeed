@@ -9,67 +9,72 @@ algo englobando todos eles, como por exemplo, uma div;
 
 Facilita a manuntenção do código;
 */
-import { Header } from "./components/Header";
-import { Post } from "./components/Post";
-import { Sidebar } from "./components/Sidebar";
-import './global.css';
-import styles from './App.module.css';
+import { Header } from "./components/Header"
+import { Post } from "./components/Post"
+import { Sidebar } from "./components/Sidebar"
+import "./global.css"
+import styles from "./App.module.css"
 
-
-const posts=[
+const posts = [
   {
-    id:1,
-    author:{
-      avartarUrl:'https://github.com/CleriaF.png', 
-      name:"Cleria Freitas",
-      role:"Analista de Sistemas"
+    id: 1,
+    author: {
+      avartarUrl: "https://github.com/CleriaF.png",
+      name: "Cleria Freitas",
+      role: "Analista de Sistemas",
     },
     content: [
-      { type: 'paragraph', content: 'Oii pessoal👋'},
+      { type: "paragraph", content: "Oii pessoal👋" },
 
-      { type: 'paragraph', content: 'Acabei de fazer mais um projeto envolvendo NodeJs para cadastro e visualização de pontos de coletas em Fortaleza🚀'},
-      { type: 'link', content:'jane.design/doctorcare'},  
+      {
+        type: "paragraph",
+        content:
+          "Acabei de fazer mais um projeto envolvendo NodeJs para cadastro e visualização de pontos de coletas em Fortaleza🚀",
+      },
+      { type: "link", content: "https://github.com/CleriaF/ecoleta-api" },
     ],
-    publishedAt:new Date('2022-12-28 15:00:00'),
+    publishedAt: new Date("2022-12-28 15:00:00"),
   },
   {
-    id:2,
-    author:{
-      avartarUrl:'https://github.com/victorskg.png', 
-      name:"João Victor",
-      role:"Developer Web"
+    id: 2,
+    author: {
+      avartarUrl: "https://github.com/victorskg.png",
+      name: "João Victor",
+      role: "Developer Web",
     },
     content: [
-      { type: 'paragraph', content: 'Olá 👋'},
+      { type: "paragraph", content: "Olá 👋" },
 
-      { type: 'paragraph', content: 'Atualmente estou me aprofundando em alguns temas como Design Patterns, Clean Arch, Domain Driven Development e Test Driven Development.🚀'},
-      { type: 'link', content:'jane.design/doctorcare'},  
+      {
+        type: "paragraph",
+        content:
+          "Atualmente estou me aprofundando em alguns temas como Design Patterns, Clean Arch, Domain Driven Development e Test Driven Development.🚀",
+      },
+      { type: "link", content: "jane.design/doctorcare" },
     ],
-    publishedAt:new Date('2022-12-28 17:00:00'),
+    publishedAt: new Date("2022-12-28 17:00:00"),
   },
-];
+]
 
- export function App() {
+export function App() {
   return (
     <div>
-      <Header/>
+      <Header />
       <div className={styles.wrapper}>
-        <Sidebar/>
+        <Sidebar />
         <main>
-          {posts.map(post =>{
+          {posts.map((post) => {
             return (
               <Post
-              key={post.id}
-              author={post.author}
-              content={post.content}
-              publishedAt={post.publishedAt}
-
+                key={post.id}
+                author={post.author}
+                content={post.content}
+                publishedAt={post.publishedAt}
               />
             )
           })}
-      </main>
+        </main>
+      </div>
     </div>
- 
-  </div>
   )
 }
